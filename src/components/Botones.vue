@@ -1,7 +1,12 @@
+<!-- 
+  -Muestra los botones de estado (borradores, confirmadas, visadas).
+  -Funcionalidad que permite cambiar el estado activo de la aplicación.
+  -Cada botón muestra un icono y un nombre correspondiente al estado.
+ -->
 <template>
-  <div class="botones">
-    <button v-for="(nombreMostrado, estado) in estadoMap" :key="estado"
-      :class="['btn', estadoActivo === estado ? 'btn-primary' : 'btn-secondary']" @click="setEstadoActivo(estado)">
+  <div class="botones-container">
+    <button v-for="(nombreMostrado, estado) in estadoMap" :key="estado" class="botones"
+      :class="['btn', estadoActivo === estado ? 'btn-select' : 'btn-light']" @click="setEstadoActivo(estado)">
       <i :class="iconos[estado]" aria-hidden="true"></i> {{ nombreMostrado }}
     </button>
   </div>
@@ -30,3 +35,16 @@ const iconos = {
   'VISADA': 'bi bi-check-all'
 };
 </script>
+
+<style scoped>
+
+.botones{
+  padding: 1.5rem;
+  margin: 0.2rem;
+}
+.btn-select{
+  background-color: #002846;
+  color: #ffff;
+}
+
+</style>

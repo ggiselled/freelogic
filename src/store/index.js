@@ -1,3 +1,9 @@
+/*
+-Configuración de Vuex para manejar el estado de la aplicación.
+-Define el estado inicial de las fichas y el estado activo.
+-Mutaciones y acciones para acceder a dicho estado.
+*/
+
 import { createStore } from 'vuex';
 
 export default createStore({

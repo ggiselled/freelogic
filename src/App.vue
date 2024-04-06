@@ -1,11 +1,18 @@
+<!-- 
+  -Muestra a lista de fichas filtradas según el estado seleccionado.
+  -Lógica para cargar las fichas, filtrarlas por estado y funcionalidad de pago.
+ -->
+
 <template>
-  <div>
-    <h1>Ejercicio</h1>
-    <Botones />
-    <div v-if="isLoading">Cargando...</div>
-    <div v-else>
-      <div v-if="fichasFiltradas.length === 0">No hay fichas para mostrar</div>
-      <Ficha v-for="ficha in fichasFiltradas" :key="ficha.id" :ficha="ficha" @pagar="pagarFicha" />
+  <div class="app">
+    <div class="app-container">
+      <h1>Ejercicio</h1>
+      <Botones />
+      <div v-if="isLoading">Cargando...</div>
+      <div v-else>
+        <div v-if="fichasFiltradas.length === 0">No hay fichas para mostrar</div>
+        <Ficha v-for="ficha in fichasFiltradas" :key="ficha.id" :ficha="ficha" @pagar="pagarFicha" />
+      </div>
     </div>
   </div>
 </template>
@@ -32,3 +39,20 @@ const pagarFicha = (payload) => {
 
 store.dispatch('fetchFichas');
 </script>
+
+<style scoped>
+.app{
+  background-color: #F0F5FF;
+  width: 100%;
+  height: 100%;
+}
+
+.app-container{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+</style>

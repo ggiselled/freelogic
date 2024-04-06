@@ -1,14 +1,22 @@
+<!-- 
+-Muestra los detalles de cada ficha (nombre, dirección, hash y fecha).
+-Contiene componente dinámico que cambia según el estado de la ficha (borrador, confirmada o visada).
+-Funcionalidad de pago de timbrado o cep según el estado de la ficha.
+ -->
+
 <template>
   <div class="card ficha mb-3">
     <div class="card-body">
       <div v-for="(nameInfo, index) in ficha.names" :key="index">
-        <p class="card-text">
+        <h4 class="card-text">
           {{ nameInfo.name }}
-        </p>
+        </h4>
       </div>
-      <h5 class="card-title">{{ ficha.id }}</h5>
+      <div class="d-flex flex-row justify-content-between">
+        <span class="card-id rounded">#{{ ficha.id }}</span>
+        <span class="card-date">{{ ficha.date }}</span>
+      </div>
       <p class="card-text">{{ ficha.address }}</p>
-      <p class="card-text">{{ ficha.date }}</p>
     </div>
     <div class="card-footer">
       <component :is="componenteEstado" :ficha="ficha" @pagar="emitirPagar" />
@@ -49,7 +57,39 @@ function emitirPagar(payload) {
 </script>
 
 <style scoped>
-.ficha {
-  max-width: 540px;
+.card{
+  margin-top: 1rem;
+  width: 90vw;
+
 }
+
+.card-id{
+  background-color:#82C3F0;
+  padding: 7px 8px;
+  color: #ffff;
+
+}
+
+.card-body{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around
+}
+
+.card-date{
+  margin-right: 2.5%;
+  padding: 7px 8px;
+}
+
+
+.ficha {
+  max-width: 440px;
+  height: 240px;
+}
+
+.card-footer{
+  background-color: transparent;
+}
+
+
 </style>
