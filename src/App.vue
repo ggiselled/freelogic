@@ -8,7 +8,7 @@
     <div class="app-container">
       <h1>EJERCICIO</h1>
       <Botones />
-      <div v-if="isLoading">Cargando...</div>
+      <div class="cargando" v-if="isLoading">Cargando...</div>
       <div v-else>
         <div v-if="fichasFiltradas.length === 0">No hay fichas para mostrar</div>
         <Ficha v-for="ficha in fichasFiltradas" :key="ficha.id" :ficha="ficha" @pagar="pagarFicha" />
@@ -45,6 +45,7 @@ store.dispatch('fetchFichas');
   background-color: #F0F5FF;
   width: 100%;
   height: 100%;
+  font-family: "Open Sans", sans-serif;
 }
 
 .app-container{
@@ -55,5 +56,9 @@ store.dispatch('fetchFichas');
   padding: 1rem;
 }
 
+.cargando{
+  font-size: 1rem;
+  font-weight: 800;
+}
 
 </style>

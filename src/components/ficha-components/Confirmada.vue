@@ -4,7 +4,7 @@
  -->
 
 <template>
-    <div>
+    <div  class="d-flex flex-row justify-content-center align-items-end w-80" >
       <div class="data">
         TIMBRADO:
         <i class="bi bi-check-circle-fill" style="color: var(--bs-success);" v-if="ficha.timbrado" ></i>
@@ -36,8 +36,15 @@
   
 <style scoped>
 .data{
-  padding: 4px;
+  padding: 15px;
   height: 40px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+button{
+  font-size: 0.6rem;
 }
 </style>
   

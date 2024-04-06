@@ -55,4 +55,15 @@ const iconos = {
   width: 34px;
 }
 
+@media(max-width: 480px){
+  .botones{
+    width: 110px;
+    padding: 0.5rem;
+  }
+
+  .bi-check-all::before{
+  width: 40px;
+}
+}
+
 </style>

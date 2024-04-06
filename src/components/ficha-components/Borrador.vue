@@ -8,5 +8,16 @@
 .borrador-btn{
   margin-left: 73%;
 }
+
+.text-primary{
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+@media(max-width: 453px){
+  .borrador-btn{
+    margin-left: 65%;
+  }
+}
 </style>
   

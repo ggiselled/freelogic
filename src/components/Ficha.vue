@@ -6,17 +6,17 @@
 
 <template>
   <div class="card ficha mb-3">
-    <div class="card-body">
+    <div class="card-body d-flex flex-column justify-content-around pt-4 pb-0">
       <div v-for="(nameInfo, index) in ficha.names" :key="index">
         <h4 class="card-text">
           {{ nameInfo.name }}
         </h4>
       </div>
-      <div class="d-flex flex-row justify-content-between">
+      <div class="numbers d-flex flex-row justify-content-between">
         <span class="card-id rounded">#{{ ficha.id }}</span>
         <span class="card-date">{{ ficha.date }}</span>
       </div>
-      <p class="card-text">{{ ficha.address }}</p>
+      <p class="card-adress">{{ ficha.address }}</p>
     </div>
     <div class="card-footer">
       <component :is="componenteEstado" :ficha="ficha" @pagar="emitirPagar" />
@@ -63,11 +63,31 @@ function emitirPagar(payload) {
 
 }
 
+
+.numbers{
+  width: 70%;
+  padding: 5px;
+}
+
+.card-text{
+  font-weight: 700;
+  color: #546280;
+  padding: 5px;
+}
+
 .card-id{
   background-color:#82C3F0;
-  padding: 7px 8px;
+  padding: 10px 8px;
   color: #ffff;
+  font-size: 1rem;
+  font-weight: 600;
 
+}
+
+.card-date{
+  font-size: 1rem;
+  font-weight: 600;
+  color:  #546280;
 }
 
 .card-body{
@@ -79,6 +99,15 @@ function emitirPagar(payload) {
 .card-date{
   margin-right: 2.5%;
   padding: 7px 8px;
+  color: #546280;
+  font-weight: 800;
+}
+
+.card-adress{
+  font-size: 1rem;
+  font-weight: 700;
+  color: #727E97;
+  padding: 5px;
 }
 
 
