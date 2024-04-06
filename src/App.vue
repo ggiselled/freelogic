@@ -6,7 +6,7 @@
 <template>
   <div class="app">
     <div class="app-container">
-      <h1>Ejercicio</h1>
+      <h1>EJERCICIO</h1>
       <Botones />
       <div v-if="isLoading">Cargando...</div>
       <div v-else>
@@ -48,11 +48,12 @@ store.dispatch('fetchFichas');
 }
 
 .app-container{
-  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 1rem;
 }
+
+
 </style>

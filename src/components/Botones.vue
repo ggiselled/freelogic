@@ -7,7 +7,7 @@
   <div class="botones-container">
     <button v-for="(nombreMostrado, estado) in estadoMap" :key="estado" class="botones"
       :class="['btn', estadoActivo === estado ? 'btn-select' : 'btn-light']" @click="setEstadoActivo(estado)">
-      <i :class="iconos[estado]" aria-hidden="true"></i> {{ nombreMostrado }}
+      <i :class="iconos[estado]" aria-hidden="true" ></i> {{ nombreMostrado }}
     </button>
   </div>
 </template>
@@ -37,14 +37,22 @@ const iconos = {
 </script>
 
 <style scoped>
+.botones-container{
+  display: flex;
+}
 
 .botones{
+  width: 140px;
   padding: 1.5rem;
   margin: 0.2rem;
 }
 .btn-select{
   background-color: #002846;
   color: #ffff;
+}
+
+.bi-check-all::before{
+  width: 34px;
 }
 
 </style>

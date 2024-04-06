@@ -84,11 +84,14 @@ function emitirPagar(payload) {
 
 .ficha {
   max-width: 440px;
-  height: 240px;
+  height: 300px;
 }
 
 .card-footer{
+  display: flex;
+  align-items: center;
   background-color: transparent;
+  height: 100px;
 }
 
 

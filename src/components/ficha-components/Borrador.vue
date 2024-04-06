@@ -6,8 +6,7 @@
 
 <style scoped>
 .borrador-btn{
-    display: flex;
-    justify-content: end;
+  margin-left: 73%;
 }
 </style>
   

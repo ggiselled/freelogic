@@ -5,12 +5,12 @@
 
 <template>
     <div>
-      <div>
+      <div class="data">
         TIMBRADO:
         <i class="bi bi-check-circle-fill" style="color: var(--bs-success);" v-if="ficha.timbrado" ></i>
         <button v-else class="btn btn-primary btn-sm" @click="emitirPagar('TIMBRADO')">PAGAR</button>
       </div>
-      <div>
+      <div class="data">
         CEP:
         <i class="bi bi-check-circle-fill" style="color: var(--bs-success);" v-if="ficha.cep" ></i>
         <button v-else class="btn btn-primary btn-sm" @click="emitirPagar('CEP')">PAGAR</button>
@@ -34,4 +34,10 @@
   }
   </script>
   
+<style scoped>
+.data{
+  padding: 4px;
+  height: 40px;
+}
+</style>
   
