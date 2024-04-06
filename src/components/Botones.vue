@@ -2,7 +2,7 @@
   <div class="botones">
     <button v-for="(nombreMostrado, estado) in estadoMap" :key="estado"
       :class="['btn', estadoActivo === estado ? 'btn-primary' : 'btn-secondary']" @click="setEstadoActivo(estado)">
-      {{ nombreMostrado }}
+      <i :class="iconos[estado]" aria-hidden="true"></i> {{ nombreMostrado }}
     </button>
   </div>
 </template>
@@ -19,8 +19,14 @@ const setEstadoActivo = (estado) => {
 };
 
 const estadoMap = {
-  'BORRADOR': 'Borrador',
+  'BORRADOR': 'Borradores',
   'CONFIRMADA': 'Confirmadas',
   'VISADA': 'Visadas'
+};
+
+const iconos = {
+  'BORRADOR': 'bi bi-arrow-repeat',
+  'CONFIRMADA': 'bi bi-check-circle',
+  'VISADA': 'bi bi-check-all'
 };
 </script>

@@ -2,12 +2,12 @@
     <div>
       <div>
         TIMBRADO:
-        <span v-if="ficha.timbrado" class="badge bg-success">✔</span>
+        <i class="bi bi-check-circle-fill" style="color: var(--bs-success);" v-if="ficha.timbrado" ></i>
         <button v-else class="btn btn-primary" @click="emitirPagar('TIMBRADO')">Pagar Timbrado</button>
       </div>
       <div>
         CEP:
-        <span v-if="ficha.cep" class="badge bg-success">✔</span>
+        <i class="bi bi-check-circle-fill" style="color: var(--bs-success);" v-if="ficha.cep" ></i>
         <button v-else class="btn btn-primary" @click="emitirPagar('CEP')">Pagar CEP</button>
       </div>
     </div>
