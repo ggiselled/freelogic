@@ -1,6 +1,10 @@
 <!-- 
--Muestra el estado de las fichas confirmadas (estado de timbrado y cep).
--Funcionalidad de pago de timbrado o CEP si todavía no están pagos.
+Template:
+-Muestra el estado de "timbrado" y "cep". Si ficha.timbrado/cep es true, muestra un ícono de check. Si es false, muestra un botón de pagar que llama a la función emitirPagar.
+
+Script:
+-Utiliza defineProps que recibe "ficha", la cual contiene los detalles de la ficha, incluyendo si timbrado y cep están pagados.
+-Con useStore se accede al store para realizar la acción de emitirPagar que despacha la acción pagarFicha al store con un payload que incluye el id de la ficha y el tipo de pago (timbrado o cep). Además imprime un mensaje en consola para confirmar que se pagó.
  -->
 
 <template>

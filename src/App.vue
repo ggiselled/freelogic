@@ -1,6 +1,15 @@
 <!-- 
-  -Muestra a lista de fichas filtradas según el estado seleccionado.
-  -Lógica para cargar las fichas, filtrarlas por estado y funcionalidad de pago.
+Template:
+-La comprobación v-if muestra un mensaje de carga si la propiedad "isLoading" es true. Si los datos por alguna razón no cargaran, se muestra el mensaje correspondiente.
+-Si hay datos disponibles, se itera sobre el array de datos, creando un componente Ficha por cada ficha de datos disponible.
+-Se escucha el evento "pagar" en las fichas correspondientes a "Confirmadas".
+
+Script:
+-Se crea una instancia de Vuex llamada store. Con useStore, se obtiene la instancia actual del store y se asigna a la constante store.
+-Las constantes fichas, estadoActivo, isLoading, reaccionan a los cambios que se produzcan en el store.
+-La constante fichasFiltradas reacciona a los cambios en "fichas" y "estadoActivo" y utiliza filter() para obtener las fichas que coinciden con el estado activo (Borradores, Confirmadas, Visadas)
+-La función pagarFicha envía la acción al store con un payload que contiene la información de la ficha a pagar.
+-Se despacha la acción fetchFichas para cargar las fichas desde el servidor o endpoint configurado en Vuex.
  -->
 
 <template>

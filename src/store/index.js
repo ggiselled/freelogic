@@ -1,7 +1,20 @@
 /*
--Configuración de Vuex para manejar el estado de la aplicación.
--Define el estado inicial de las fichas y el estado activo.
--Mutaciones y acciones para acceder a dicho estado.
+-Se define el estado global de la aplicación con "state", el cual tiene las siguientes propiedades:
+1)fichas: indica un array que alacena las fichas provenientes del endpoint.
+2)estadoActivo: registra que la primer solapa a mostrar sea la de "Confirmada".
+
+-Las mutations se encargan de modificar el estado.
+1)setFichas: establece el array de "fichas" en el estado con los datos proporcionados del endpoint.
+2)setEstadoActivo: camvia el "estadoActivo" actual en el estado (cambio de solapas).
+3)setLoading: activa o desactiva el indicador de carga.
+4)setError: establece un error en el estado en caso de que salga mal.
+5)pagarFicha: encuentra una ficha por su ID y actualiza el estado timbrado o cep a pagado (true).
+6)updateFicha: actualiza la ficha que se modifica al clickear el botón "pagar".
+
+-Las actions realizan operaciones asincrónicas y luego realizan mutaciones.
+1)fetFichas: carga asincrónicamente las fichas desde el endpoint y luego realiza la mutarion "setFichas" con los datos cargados. Durante el mismo proceso, se usan las mutations setLoading y setError para manejar el estado de carga y errores.
+2)pagarFicha: realiza lamutación "pagarFicha" ó "updateFicha" para actualizar el estado de una ficha a pagado.
+
 */
 
 import { createStore } from 'vuex';

@@ -1,7 +1,12 @@
 <!-- 
+Template:
 -Muestra los detalles de cada ficha (nombre, dirección, hash y fecha).
 -Contiene componente dinámico que cambia según el estado de la ficha (borrador, confirmada o visada).
--Funcionalidad de pago de timbrado o cep según el estado de la ficha.
+
+Script:
+-Se define props para recibir la ficha como un objeto desde el componente padre.
+-Con computed se determina qué componenteEstado se tiene que renderizar en el footer de la tarjeta, según el estado actual (Borradores, Confirmadas, Visadas) de la ficha.
+-Con getCurrentInstance se obtiene la instancia del componente para poder emitir el evento emitirPagar al hacer click en el botón de pago en la solapa de Confirmadas.
  -->
 
 <template>
